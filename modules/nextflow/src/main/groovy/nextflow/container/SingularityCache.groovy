@@ -287,7 +287,7 @@ class SingularityCache {
         log.trace """${appName} pull
                      command: $cmd
                      timeout: $pullTimeout
-                     folder : $storePath""".stripIndent(true)
+                     folder : $storePath""".stripIndent()
 
         final max = pullTimeout.toMillis()
         final builder = new ProcessBuilder(['bash','-c',cmd])

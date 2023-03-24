@@ -111,7 +111,7 @@ class BashFunLib<V extends BashFunLib> {
             )
             unset IFS
         }
-        """.stripIndent(true)
+        """.stripIndent()
     }
 
     String render() {

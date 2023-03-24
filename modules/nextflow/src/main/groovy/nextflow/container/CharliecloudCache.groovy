@@ -17,6 +17,7 @@
 package nextflow.container
 
 import java.nio.file.FileSystems
+import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.concurrent.ConcurrentHashMap
@@ -29,6 +30,7 @@ import groovyx.gpars.dataflow.LazyDataflowVariable
 import nextflow.Global
 import nextflow.file.FileMutex
 import nextflow.util.Duration
+import nextflow.util.Escape
 /**
  * Handle caching of remote Charliecloud images
  *
@@ -219,7 +221,7 @@ class CharliecloudCache {
         log.trace """Charliecloud pull
                      command: $cmd
                      timeout: $pullTimeout
-                     folder : $storePath""".stripIndent(true)
+                     folder : $storePath""".stripIndent()
 
         final max = pullTimeout.toMillis()
         final builder = new ProcessBuilder(['bash','-c',cmd])

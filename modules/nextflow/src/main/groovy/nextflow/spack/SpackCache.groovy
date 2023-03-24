@@ -302,7 +302,7 @@ class SpackCache {
     void runCommand( String cmd ) {
         log.trace """spack env create
                      command: $cmd
-                     timeout: $createTimeout""".stripIndent(true)
+                     timeout: $createTimeout""".stripIndent()
 
         final max = createTimeout.toMillis()
         final builder = new ProcessBuilder(['bash','-c',cmd])

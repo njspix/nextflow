@@ -241,7 +241,7 @@ class WebLogObserver implements TraceObserver{
                 Failed to send message to ${endpoint} -- received 
                 - status code : $statusCode    
                 - response msg: ${httpClient.getResponse()}  
-                """.stripIndent(true)
+                """.stripIndent()
             log.debug msg
         }
     }
